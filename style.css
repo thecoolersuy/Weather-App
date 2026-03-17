@@ -1,0 +1,38 @@
+body{
+    background-color: #424242;
+    
+}
+
+
+.weather-card{
+    
+    background-color: cyan;
+    width:400px;
+    height:500px;
+    border-radius:5px;
+}
+.info-input{
+    display: flex;
+    flex-direction: row;
+    gap:14px;
+    padding:30px;
+
+}
+
+#search{
+    width:260px;
+    height:40px;
+    border:0px;
+    border-radius: 100px;
+    text-align: center;
+    color: cyan;
+}
+
+
+#button{
+    width:42px;
+    height:42px;
+    border:0px;
+    border-radius: 50%;
+
+}
