@@ -47,14 +47,17 @@ form.addEventListener("submit", async function(e){
             card.textContent=""
             card.style.display= "flex"
             card.style.flexDirection = "column"
-            card.style.padding = "20px"
-            card.style.width = "300px"
-            card.style.height= "500px"
-            card.style.background = "linear-gradient(180deg , #548dff, #ffcf8c)"
+            card.style.gap = "2px"
+            card.style.padding = "10px"
+            card.style.width = "320px"
+            card.style.height= "510px"
+            card.style.background = "linear-gradient(180deg , #fe5060, #feac46)"
+            card.style.border = "4px solid white"
+            card.style.borderRadius = "15px"
 
 
            
-            const cityDisplay = document.createElement("h1") ;
+            const cityDisplay = document.createElement("h1") 
             const tempDisplay = document.createElement("p")
             const humidityDisplay = document.createElement("p")
             const descDisplay = document.createElement("p")
@@ -63,23 +66,49 @@ form.addEventListener("submit", async function(e){
             cityDisplay.innerHTML = city
             cityDisplay.className = "city"
             card.appendChild(cityDisplay)
-
-            tempDisplay.innerHTML = `${temp}`
+            
+            
+            tempDisplay.innerHTML = `${Math.floor((temp - 273.15))}°C`
             tempDisplay.className = "weather"
             card.appendChild(tempDisplay)
 
-            humidityDisplay.innerHTML = `${humidity}`
+            humidityDisplay.innerHTML = `Humidity : ${humidity}`
             humidityDisplay.className = "weather"
             card.appendChild(humidityDisplay)
 
             descDisplay.innerHTML = `${description}`
+            descDisplay.style.fontWeight = "bold"
             descDisplay.className = "weather"
             card.appendChild(descDisplay)
+
+            emojiDisplay.innerHTML = `${displayWeatherEmoji(id)}`
+            emojiDisplay.className = "weatheremoji"
+            card.appendChild(emojiDisplay)
+            
+
+
+
             
        
         };
-
-
+        function displayWeatherEmoji(id){
+            switch(true){
+              case (id >= 200 && id < 300):
+                return `🌩️`
+              case (id>=300 && id<400):
+                return `🌦️`
+              case (id>=500 && id<600):
+                return `🌧️`
+              case (id>=600 && id<700):
+                return `❄️`
+              case (id>800 && id<810):
+                return `☁️`
+              case (id == 800):
+                return `☀️`
+              default:
+                return `🌤️`
+            }
+        }
         function displayError(message){
                 card.textContent = `${message}`
         }
