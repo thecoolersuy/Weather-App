@@ -8,8 +8,9 @@ body{
     background-color:#ebedee
 }
 
+
 .cityName{
-    width:260px;
+    width:320px;
     height:45px;
     border:2px solid #a7a0a0;
     border-radius: 8px;
@@ -60,8 +61,7 @@ body{
 }
 
 .weatheremoji{
-     font-size:60px;
-     text-align:center;
+     
 }
 
 .city {
@@ -96,10 +96,11 @@ body{
 } */
 
 .area{
-    font-size:30px;
+    font-size:25px;
     color: #222222;
     font-weight: bold;
     text-align: center;
+    padding-top:10px;
 }
 
 .aqiValue{
